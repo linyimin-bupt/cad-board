@@ -42,7 +42,7 @@ function getIp(): number {
 }
 
 async function main (): Promise<number> {
-  firebase.initializeApp(environment.firebaseConfig)
+  firebase.initializeApp(environment.firebase)
 
   const ref = firebase.app().database().ref('gpus')
 

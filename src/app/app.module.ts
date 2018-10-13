@@ -1,12 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 
-import { AngularFireModule } from 'angularfire2'
-import { AngularFireDatabaseModule } from 'angularfire2/database'
+import { FirebaseModule } from './firebase/'
 
 import { GoogleChartsModule } from 'angular-google-charts'
-
-import { environment } from '../environments/environment'
 
 import { AppComponent } from './app.component'
 import { CadScreenComponent } from './cad-screen/cad-screen.component'
@@ -19,10 +16,8 @@ import { CadScreenComponent } from './cad-screen/cad-screen.component'
   imports: [
     BrowserModule,
     GoogleChartsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule,
+    FirebaseModule,
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

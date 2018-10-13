@@ -11,7 +11,7 @@ describe('GpuService', () => {
   beforeEach(() => TestBed.configureTestingModule({
     imports: [
       AngularFireDatabaseModule,
-      AngularFireModule.initializeApp(environment.firebaseConfig),
+      AngularFireModule.initializeApp(environment.firebase),
     ]
   }))
 

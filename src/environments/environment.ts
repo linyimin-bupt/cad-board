@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  firebaseConfig: {
+  firebase: {
     apiKey           : 'AIzaSyC7rffsqf4BEpJIO8lt6eG1lfk9X59_sK8',
     authDomain       : 'cad-screen.firebaseapp.com',
     databaseURL      : 'https://cad-screen.firebaseio.com',

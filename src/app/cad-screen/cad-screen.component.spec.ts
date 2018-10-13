@@ -19,7 +19,7 @@ describe('CadScreenComponent', () => {
       ],
       imports: [
         AngularFireDatabaseModule,
-        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireModule.initializeApp(environment.firebase),
         GoogleChartsModule,
       ],
     })
