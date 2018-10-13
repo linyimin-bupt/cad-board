@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
+
+import {
+  VERSION,
+}                         from '../config'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'cad-screen';
+  title   = 'cad-screen'
+  version = VERSION
 }
