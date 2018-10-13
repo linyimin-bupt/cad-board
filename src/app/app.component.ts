@@ -1,11 +1,11 @@
 import {
   Component,
   OnInit,
-} from '@angular/core'
+}               from '@angular/core'
 
 import {
   VERSION,
-}                         from '../config'
+}               from '../config'
 
 @Component({
   selector: 'app-root',
