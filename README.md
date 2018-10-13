@@ -1,27 +1,28 @@
-# CadScreen
+# CAD SCREEN
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
+CAD Monitor & Reportor - https://cad-screen.surge.sh/
 
-## Development server
+## SEE ALSO
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- [Google Charts](https://google-developers.appspot.com/chart/interactive/docs/)
+- [An Angular 6 implementation of the Google Charts library](https://github.com/FERNman/angular-google-charts)
 
-## Code scaffolding
+## CHANGELOG
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### v0.0.1 (master) - Oct 2018
 
-## Build
+1. Show GPU Usages with Angular Google Charts
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## AUTHOR
 
-## Running unit tests
+Huan LI \<zixia@zixia.net\> (http://linkedin.com/in/zixia)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<a href="http://stackoverflow.com/users/1123955/zixia">
+  <img src="http://stackoverflow.com/users/flair/1123955.png" width="208" height="58" alt="profile for zixia at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for zixia at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+</a>
 
-## Running end-to-end tests
+## COPYRIGHT & LICENSE
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* Code & Docs © 2017-2018 Huan LI \<zixia@zixia.net\>
+* Code released under the Apache-2.0 License
+* Docs released under Creative Commons
