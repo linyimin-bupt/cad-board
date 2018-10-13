@@ -5,8 +5,6 @@ import {
 }                         from '@angular/core'
 
 import {
-  ChartErrorEvent,
-  ChartEvent,
   GoogleChartComponent,
 }                         from 'angular-google-charts'
 

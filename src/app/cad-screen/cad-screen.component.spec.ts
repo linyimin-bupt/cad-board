@@ -1,5 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 
+import { GoogleChartsModule } from 'angular-google-charts'
+
 import { CadScreenComponent } from './cad-screen.component'
 
 describe('CadScreenComponent', () => {
@@ -8,7 +10,12 @@ describe('CadScreenComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CadScreenComponent ]
+      declarations: [
+        CadScreenComponent,
+      ],
+      imports: [
+        GoogleChartsModule,
+      ],
     })
     .compileComponents()
   }))
