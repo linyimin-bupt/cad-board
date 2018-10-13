@@ -3,6 +3,17 @@ import * as firebase from 'firebase'
 
 import { environment } from '../src/environments/environment'
 
+async function update(usage: {}): Promise<void> {
+  firebase.initializeApp(environment.firebase)
+
+  const firestore = firebase.app().firestore()
+  const settings = {/* your settings... */ timestampsInSnapshots: true}
+  firestore.settings(settings)
+
+  const doc = firestore.collection('server').doc('gpu')
+  await doc.update(usage)
+}
+
 function getGpu(): Array<number> {
   const output = shell.exec('nvidia-smi --format=csv,noheader --query-gpu=utilization.gpu')
   if (output.code !== 0) {
@@ -14,9 +25,12 @@ function getGpu(): Array<number> {
    * 0 %
    * 2 %
    */
-  console.log(output.stdout)
+  // console.log(output.stdout)
   const lineList = output.stdout.split('\n')
-  const percentageList = lineList.map(line => parseInt(line.split(' ')[0], 10))
+  // console.log(lineList)
+  const percentageList = lineList
+                          .map(line => parseInt(line.split(' ')[0], 10))
+                          .filter(n => n === n)
 
   return percentageList
 }
@@ -30,21 +44,19 @@ function getIp(): number {
   }
 
   // inet 111.207.243.71/28 brd 111.207.243.79 scope global eth0
-  const RE = /^\s+inet\s+\d+\.\d+\.\d+\.\d+\/\d+/
+  const RE = /inet\s+\d+\.\d+\.\d+\.(\d+)\/\d+/
 
   const result = output.stdout.match(RE)
-  if (!result) {
+  if (!result[1]) {
     console.error('fail!')
     return -1
   }
 
+  // console.log(result)
   return parseInt(result[1], 10)
 }
 
 async function main (): Promise<number> {
-  firebase.initializeApp(environment.firebase)
-
-  const ref = firebase.app().database().ref('gpus')
 
   const ip = getIp()
   const gpuUsageList = getGpu()
@@ -54,10 +66,11 @@ async function main (): Promise<number> {
   for (let i = 0; i < gpuUsageList.length; i++) {
     const name = ip + '_' + i
     usage[name] = gpuUsageList[i]
+    console.log('usage', name, gpuUsageList[i])
   }
 
-  console.log('usage', usage)
-  ref.update(usage)
+
+  await update(usage)
 
   return 0
 }
