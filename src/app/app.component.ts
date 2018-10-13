@@ -10,6 +10,6 @@ import {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title   = 'cad-screen'
+  title   = 'CAD Monitor & Reportor'
   version = VERSION
 }
