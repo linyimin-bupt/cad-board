@@ -1,0 +1,47 @@
+language: node_js
+node_js:
+  - 10
+
+os:
+  - linux
+
+cache:
+  directories:
+    - node_modules
+
+after_success:
+  - if [ "$TRAVIS_OS_NAME" == 'linux' ]; then echo 'TODO update coverage'; fi
+
+stages:
+  - test
+  - name: deploy
+    if: (type = push) AND branch =~ ^(master|v\d+\.\d+)$
+
+jobs:
+  include:
+
+    - stage: test
+      script:
+      - echo $TRAVIS_OS_NAME
+      - npm version
+      - ng --version
+      - npm test
+
+    - stage: deploy
+      script:
+        - echo "Building Web Pages ..."
+        - npm run build:prod
+        - echo "Deploying to Surge.sh ..."
+
+      deploy:
+        provider: surge
+        project: dist/cad-screen/
+        domain: cad-screen.surge.sh
+        skip_cleanup: true
+        on:
+          all_branches: true
+
+notifications:
+  email:
+    on_success: change
+    on_failure: change
