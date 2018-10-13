@@ -2,7 +2,9 @@ import {
   Component,
   OnInit,
   ViewChild,
+  OnDestroy,
 }                         from '@angular/core'
+import { Subscription } from 'rxjs'
 
 import {
   GoogleChartComponent,
@@ -26,7 +28,7 @@ interface GoogleChart {
   templateUrl: './cad-screen.component.html',
   styleUrls  : ['./cad-screen.component.css']
 })
-export class CadScreenComponent implements OnInit {
+export class CadScreenComponent implements OnInit, OnDestroy {
 
   charts: Array<GoogleChart> = []
 
@@ -34,7 +36,7 @@ export class CadScreenComponent implements OnInit {
     title: 'GPU Usage',
     type: 'BarChart',
     data: [
-      ['GPU', 0],
+      ['Loading ...', 1],
     ],
     columnNames: ['GPU', '%'],
     options: {
@@ -46,26 +48,30 @@ export class CadScreenComponent implements OnInit {
     }
   }
 
-  @ViewChild('chart')
-  chart: GoogleChartComponent
+  // @ViewChild('chart')
+  // chart: GoogleChartComponent
 
-  displayedColumns = ['title', 'description', 'author']
-  // dataSource = new BoardDataSource(this.gpu)
+  subscription: Subscription
 
   constructor(
     private gpu: GpuService,
   ) { }
 
   ngOnInit() {
-    this.gpu.getGpus().subscribe(list => {
-      const newGpuDict = {}
-
-      this.changingChart.data = list.map(item => [
-        item.payload.key,
-        item.payload.val(),
-      ])
-
+    this.subscription = this.gpu.getGpus().subscribe(data => {
+      const newData = []
+      for (const [key, value] of Object.entries(data)) {
+        console.log('changed:', key, value)
+        newData.push([key, value])
+      }
+      this.changingChart.data = newData
     })
+  }
+
+  ngOnDestroy () {
+    if (this.subscription) {
+      this.subscription.unsubscribe()
+    }
   }
 
   changeChart() {

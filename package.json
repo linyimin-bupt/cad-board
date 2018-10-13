@@ -9,6 +9,7 @@
     "lint": "ng lint",
     "monitor": "ts-node server/monitor.ts",
     "test:unit": "ng test --watch=false",
+    "test:unit:watch": "ng test --watch=false",
     "test:e2e": "ng e2e",
     "test": "npm run lint && npm run test:unit && npm run test:e2e"
   },

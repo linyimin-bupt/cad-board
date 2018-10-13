@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core'
-import { AngularFireModule } from 'angularfire2'
-import { AngularFireDatabaseModule } from 'angularfire2/database'
+import {
+  AngularFireModule,
+}                           from '@angular/fire'
+import {
+  AngularFirestoreModule,
+}                           from '@angular/fire/firestore'
 
 import { environment } from '../../environments/environment'
 
-
 @NgModule({
   imports: [
-    AngularFireDatabaseModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
   ]
 })
 

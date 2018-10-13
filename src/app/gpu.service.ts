@@ -3,10 +3,7 @@ import { Injectable } from '@angular/core'
 import { Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
 
-import {
-  AngularFireDatabase,
-  AngularFireList,
-}                       from 'angularfire2/database'
+import { AngularFirestore } from '@angular/fire/firestore'
 
 @Injectable({
   providedIn: 'root'
@@ -15,22 +12,22 @@ export class GpuService {
 
   private ref: firebase.firestore.CollectionReference
 
-  gpuList: AngularFireList<any>
+  gpuList: Observable<{}>
 
   constructor(
-    private firebase: AngularFireDatabase,
+    private db: AngularFirestore,
   ) {
-    this.gpuList = this.firebase.list('gpus')
+    this.gpuList = db.collection('server').doc('gpu').valueChanges()
   }
 
-  addGpu() {
-    this.gpuList.push({
+  addGpu () {
+    this.db.collection('gpus').add({
       test: 100,
     })
   }
 
-  getGpus() {
-    return this.gpuList.snapshotChanges()
+  getGpus () {
+    return this.gpuList
 
     // return new Observable((observer) => {
     //   this.ref.onSnapshot((querySnapshot) => {
