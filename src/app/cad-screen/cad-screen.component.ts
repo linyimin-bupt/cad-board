@@ -62,8 +62,11 @@ export class CadScreenComponent implements OnInit, OnDestroy {
       const newData = []
       for (const [key, value] of Object.entries(data)) {
         console.log('changed:', key, value)
-        newData.push([key, value])
+        const numberValue = parseInt(value, 10)
+        newData.push([key, numberValue])
       }
+
+      console.log(newData)
       this.changingChart.data = newData
     })
   }

@@ -1,9 +1,12 @@
+/**
+ * (cd /home/zixia/git/cad-screen && npm run monitor)
+ */
 import * as shell from 'shelljs'
 import * as firebase from 'firebase'
 
 import { environment } from '../src/environments/environment'
 
-async function update(usage: {}): Promise<void> {
+async function updateFirebase(usage: {}): Promise<void> {
   firebase.initializeApp(environment.firebase)
 
   const firestore = firebase.app().firestore()
@@ -12,6 +15,22 @@ async function update(usage: {}): Promise<void> {
 
   const doc = firestore.collection('server').doc('gpu')
   await doc.update(usage)
+}
+
+async function updateByCurl(usage: {}): Promise<void> {
+  const WEB_TASK_URL = 'https://wt-3c52d1a0af632076ec7752be78cc0421-0.sandbox.auth0-extend.com/gpu'
+
+  const paramList = []
+
+  for (const [key, value] of Object.entries(usage)) {
+    paramList.push(`--data ${key}=${value}`)
+  }
+
+  const param = paramList.join(' ')
+
+  const cmd = `curl -s -k ${param} ${WEB_TASK_URL}`
+  const result = shell.exec(cmd)
+  console.log(result.stdout)
 }
 
 function getGpu(): Array<number> {
@@ -56,21 +75,26 @@ function getIp(): number {
   return parseInt(result[1], 10)
 }
 
+function getName (): string {
+  return shell.exec('hostname -s').stdout.replace(/\n/, '')
+}
+
 async function main (): Promise<number> {
 
-  const ip = getIp()
+  // const ip = getIp()
+  const name = getName()
   const gpuUsageList = getGpu()
 
   const usage = {}
 
   for (let i = 0; i < gpuUsageList.length; i++) {
-    const name = ip + '_' + i
-    usage[name] = gpuUsageList[i]
-    console.log('usage', name, gpuUsageList[i])
+    const gpuName = name + '_' + i
+    usage[gpuName] = gpuUsageList[i]
+    console.log('usage', gpuName, gpuUsageList[i])
   }
 
 
-  await update(usage)
+  await updateByCurl(usage)
 
   return 0
 }

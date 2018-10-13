@@ -5,6 +5,10 @@ import { map } from 'rxjs/operators'
 
 import { AngularFirestore } from '@angular/fire/firestore'
 
+export interface GpuItem {
+  [name: string]: string,
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,12 +16,12 @@ export class GpuService {
 
   private ref: firebase.firestore.CollectionReference
 
-  gpuList: Observable<{}>
+  gpuList: Observable<GpuItem>
 
   constructor(
     private db: AngularFirestore,
   ) {
-    this.gpuList = db.collection('server').doc('gpu').valueChanges()
+    this.gpuList = db.collection('server').doc<GpuItem>('gpu').valueChanges()
   }
 
   addGpu () {
