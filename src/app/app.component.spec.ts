@@ -1,6 +1,10 @@
 import { TestBed, async } from '@angular/core/testing'
 
 import { GoogleChartsModule } from 'angular-google-charts'
+import { AngularFireModule } from 'angularfire2'
+import { AngularFireDatabaseModule } from 'angularfire2/database'
+
+import { environment } from '../environments/environment'
 
 import { AppComponent } from './app.component'
 import { CadScreenComponent } from './cad-screen/cad-screen.component'
@@ -10,6 +14,8 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
+        AngularFireDatabaseModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
         GoogleChartsModule,
       ],
       declarations: [

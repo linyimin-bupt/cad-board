@@ -8,6 +8,10 @@ import {
   GoogleChartComponent,
 }                         from 'angular-google-charts'
 
+import {
+  GpuService,
+}               from '../gpu.service'
+
 interface GoogleChart {
   title       : string,
   type        : string,
@@ -30,10 +34,7 @@ export class CadScreenComponent implements OnInit {
     title: 'GPU Usage',
     type: 'BarChart',
     data: [
-      ['71#1', 2],
-      ['71#2', 10],
-      ['71#3', 19],
-      ['17#1', 21.],
+      ['GPU', 0],
     ],
     columnNames: ['GPU', '%'],
     options: {
@@ -48,9 +49,23 @@ export class CadScreenComponent implements OnInit {
   @ViewChild('chart')
   chart: GoogleChartComponent
 
-  constructor() { }
+  displayedColumns = ['title', 'description', 'author']
+  // dataSource = new BoardDataSource(this.gpu)
+
+  constructor(
+    private gpu: GpuService,
+  ) { }
 
   ngOnInit() {
+    this.gpu.getGpus().subscribe(list => {
+      const newGpuDict = {}
+
+      this.changingChart.data = list.map(item => [
+        item.payload.key,
+        item.payload.val(),
+      ])
+
+    })
   }
 
   changeChart() {
