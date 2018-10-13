@@ -6,6 +6,7 @@ CAD Monitor & Reportor - https://cad-screen.surge.sh/
 
 - [Google Charts](https://google-developers.appspot.com/chart/interactive/docs/)
 - [An Angular 6 implementation of the Google Charts library](https://github.com/FERNman/angular-google-charts)
+- [Save and Query Firebase Data - Connect to Firebase with the JavaScript SDK](https://howtofirebase.com/save-and-query-firebase-data-ed73fb8c6e3a)
 
 ## CHANGELOG
 

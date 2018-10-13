@@ -7,6 +7,7 @@
     "build": "ng build",
     "build:prod": "ng build --prod --aot",
     "lint": "ng lint",
+    "monitor": "ts-node server/monitor.ts",
     "test:unit": "ng test --watch=false",
     "test:e2e": "ng e2e",
     "test": "npm run lint && npm run test:unit && npm run test:e2e"
@@ -23,11 +24,13 @@
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
+    "@types/shelljs": "^0.8.0",
     "angular-google-charts": "0.0.9",
     "angularfire2": "^5.0.2",
     "core-js": "^2.5.4",
     "firebase": "^5.5.4",
     "rxjs": "~6.2.0",
+    "shelljs": "^0.8.2",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
@@ -49,7 +52,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.4.0",
     "puppeteer": "^1.9.0",
-    "ts-node": "~7.0.0",
+    "ts-node": "^7.0.1",
     "tslint": "~5.11.0",
     "typescript": "~2.9.2"
   },
