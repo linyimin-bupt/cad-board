@@ -5,6 +5,11 @@ node_js:
 os:
   - linux
 
+addons:
+  apt:
+    packages:
+      - google-chrome-stable
+
 cache:
   directories:
     - node_modules
