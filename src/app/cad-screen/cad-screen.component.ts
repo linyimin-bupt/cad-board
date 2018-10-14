@@ -33,7 +33,7 @@ export class CadScreenComponent implements OnInit, OnDestroy {
   charts: Array<GoogleChart> = []
 
   changingChart = {
-    title: 'GPU Usage',
+    title: 'Machine Learning Status',
     type: 'BarChart',
     data: [
       ['Loading ...', 1],
@@ -44,7 +44,12 @@ export class CadScreenComponent implements OnInit, OnDestroy {
         duration: 250,
         easing: 'ease-in-out',
         startup: true
-      }
+      },
+      hAxis: {
+        title: 'GPU Utilization',
+        minValue: 0,
+        maxValue: 100,
+      },
     }
   }
 
