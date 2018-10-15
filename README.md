@@ -2,6 +2,8 @@
 
 CAD Monitor & Reportor - <https://cad-screen.surge.sh/>
 
+![CAD Screen @ 819](https://bupt.github.io/cad-screen/images/cad-screen-819.jpg)
+
 ## SEE ALSO
 
 - [Google Charts](https://google-developers.appspot.com/chart/interactive/docs/)
