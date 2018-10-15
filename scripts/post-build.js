@@ -1,3 +1,7 @@
+/**
+ * Automagic reload for clients after deploy with Angular 4
+ * https://blog.nodeswat.com/automagic-reload-for-clients-after-deploy-with-angular-4-8440c9fdd96c
+ */
 const path = require('path');
 const fs = require('fs');
 const util = require('util');
