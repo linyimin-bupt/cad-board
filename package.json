@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "build:prod": "ng build --prod --aot",
+    "postbuild:prod": "node ./scripts/post-build.js",
     "lint": "ng lint",
     "monitor": "ts-node server/monitor.ts",
     "test:unit": "ng test --watch=false",
