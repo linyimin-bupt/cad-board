@@ -1,8 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
+import { HttpClientModule } from '@angular/common/http'
 
 import { GoogleChartsModule } from 'angular-google-charts'
 
-import { FirebaseModule } from '../firebase'
+import { FirebaseModule }       from '../firebase'
+import { VersionCheckService }  from '../version-check.service'
 
 import { CadScreenComponent } from './cad-screen.component'
 
@@ -18,6 +20,7 @@ describe('CadScreenComponent', () => {
       imports: [
         FirebaseModule,
         GoogleChartsModule,
+        HttpClientModule,
       ],
     })
     .compileComponents()

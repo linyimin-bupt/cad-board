@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
+import { HttpClientModule } from '@angular/common/http'
 
 import { FirebaseModule } from './firebase/'
 
@@ -17,6 +18,7 @@ import { CadScreenComponent } from './cad-screen/cad-screen.component'
     BrowserModule,
     GoogleChartsModule,
     FirebaseModule,
+    HttpClientModule,
   ],
   bootstrap: [AppComponent]
 })

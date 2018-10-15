@@ -2,25 +2,32 @@
  * Automagic reload for clients after deploy with Angular 4
  * https://blog.nodeswat.com/automagic-reload-for-clients-after-deploy-with-angular-4-8440c9fdd96c
  */
-import { Injectable } from '@angular/core'
+import { Injectable, NgZone } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 
 import { first } from 'rxjs/operators'
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class VersionCheckService {
     // this will be replaced by actual hash post-build.js
     private currentHash = '{{POST_BUILD_ENTERS_HASH_HERE}}'
 
-    constructor(private http: HttpClient) {}
+    constructor(
+      private http: HttpClient,
+      private ngZone: NgZone,
+    ) {}
 
     /**
      * Checks in every set frequency the version of frontend application
      */
     public initVersionCheck(url, frequency = 1000 * 60) {
+      this.ngZone.runOutsideAngular(() => {
         setInterval(() => {
             this.checkVersion(url)
         }, frequency)
+      })
     }
 
     /**

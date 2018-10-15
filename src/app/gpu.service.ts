@@ -1,9 +1,11 @@
-import { Injectable } from '@angular/core'
+import { Injectable, Injector, NgZone } from '@angular/core'
 
-import { Observable } from 'rxjs'
+import { Observable, Subject } from 'rxjs'
 import { map } from 'rxjs/operators'
 
-import { AngularFirestore } from '@angular/fire/firestore'
+import {
+  AngularFirestore,
+}                     from './firebase'
 
 export interface GpuItem {
   [name: string]: string,
@@ -16,12 +18,24 @@ export class GpuService {
 
   private ref: firebase.firestore.CollectionReference
 
-  gpuList: Observable<GpuItem>
+  gpuList: Subject<GpuItem>
+  db: AngularFirestore
 
   constructor(
-    private db: AngularFirestore,
+    private injector: Injector,
+    private ngZone  : NgZone,
   ) {
-    this.gpuList = db.collection('server').doc<GpuItem>('gpu').valueChanges()
+    this.gpuList = new Subject<GpuItem>()
+
+    ngZone.runOutsideAngular(() => {
+      this.db = injector.get(AngularFirestore)
+      this.db.collection('server').doc<GpuItem>('gpu').valueChanges().subscribe(i => {
+        this.ngZone.run(() => {
+          this.gpuList.next(i)
+        })
+      })
+    })
+
   }
 
   addGpu () {
@@ -32,22 +46,5 @@ export class GpuService {
 
   getGpus () {
     return this.gpuList
-
-    // return new Observable((observer) => {
-    //   this.ref.onSnapshot((querySnapshot) => {
-    //     const boards = []
-    //     querySnapshot.forEach((doc) => {
-    //       const data = doc.data()
-    //       boards.push({
-    //         key: doc.id,
-    //         title: data.title,
-    //         description: data.description,
-    //         author: data.author
-    //       })
-    //     })
-    //     console.log(boards)
-    //     observer.next(boards)
-    //   })
-    // })
   }
 }
