@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  versionCheckURL: 'https://cad-screen.surge.sh/version.json',
+  versionCheckURL: '/version.json',
   firebase: {
     apiKey           : 'AIzaSyC7rffsqf4BEpJIO8lt6eG1lfk9X59_sK8',
     authDomain       : 'cad-screen.firebaseapp.com',

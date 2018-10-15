@@ -24,6 +24,7 @@ export class VersionCheckService {
      */
     public initVersionCheck(url, frequency = 1000 * 60) {
       this.ngZone.runOutsideAngular(() => {
+        this.checkVersion(url)
         setInterval(() => {
             this.checkVersion(url)
         }, frequency)
