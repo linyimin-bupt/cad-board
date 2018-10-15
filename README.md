@@ -20,6 +20,10 @@ CAD Monitor & Reportor - https://cad-screen.surge.sh/
 
 > Contact [@zixia](https://github.com/zixia) for details.
 
+## SYSTEM
+
+Angular <-> Firebase <-> Webtask <-> Monitor
+
 ## CHANGELOG
 
 ### v0.0.1 (master) - Oct 2018
