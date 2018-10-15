@@ -1,6 +1,6 @@
 # CAD SCREEN
 
-CAD Monitor & Reportor - https://cad-screen.surge.sh/
+CAD Monitor & Reportor - <https://cad-screen.surge.sh/>
 
 ## SEE ALSO
 
@@ -32,6 +32,6 @@ Angular <-> Firebase <-> Webtask <-> Monitor
 
 ## COPYRIGHT & LICENSE
 
-* Code & Docs © 2017 - now [CAD Lab](https://github.com/BUPT/awesome-cad)
-* Code released under the Apache-2.0 License
-* Docs released under Creative Commons
+- Code & Docs © 2017 - now [CAD Lab](https://github.com/BUPT/awesome-cad)
+- Code released under the Apache-2.0 License
+- Docs released under Creative Commons
