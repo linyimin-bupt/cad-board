@@ -12,7 +12,7 @@ CAD Monitor & Reportor - <https://cad-screen.surge.sh/>
 
 ## TEAM
 
-1. Architect: [@zixia](https://github.com/zixia)
+1. Architect: Huan LI [@zixia](https://github.com/zixia)
 1. Database Administrator: TBH
 1. Angular Developer: TBh
 1. Linux Administrator: TBH
