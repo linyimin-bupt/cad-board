@@ -1,5 +1,7 @@
 # CAD SCREEN
 
+[![Build Status](https://travis-ci.com/BUPT/cad-screen.svg?branch=master)](https://travis-ci.com/BUPT/cad-screen)
+
 CAD Monitor & Reportor - <https://cad-screen.surge.sh/>
 
 ![CAD Screen @ 819](https://bupt.github.io/cad-screen/images/cad-screen-819.jpg)
