@@ -17,8 +17,11 @@ CAD Monitor & Reportor - <https://cad-screen.surge.sh/>
 1. Architect: Huan LI [@zixia](https://github.com/zixia)
 1. Database Administrator: TBH
 1. Angular Developer: TBH
-1. Service Administrator: Yimin LIN [@linyimin-bupt](https://github.com/linyimin-bupt)
+1. Service Administrator: [@linyimin-bupt](https://github.com/linyimin-bupt) Yimin LIN \<linyimin520812@gmail.com\>
+    1. Deploy Server Monitor Script
+    1. Keep CAD-Screen Visible & Available
 1. Designer: TBH
+1. WebTask Developer: TBH
 
 **WE ARE HIRING!**
 
