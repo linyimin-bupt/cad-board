@@ -24,9 +24,9 @@ interface GoogleChart {
 }
 
 @Component({
-  selector   : 'app-cad-screen',
-  templateUrl: './cad-screen.component.html',
-  styleUrls  : ['./cad-screen.component.css']
+  selector   : 'app-cad-board',
+  templateUrl: './cad-board.component.html',
+  styleUrls  : ['./cad-board.component.css']
 })
 export class CadScreenComponent implements OnInit, OnDestroy {
 

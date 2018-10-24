@@ -2,4 +2,4 @@
 set -e
 
 npm run build
-surge dist/cad-screen cad-screen.surge.sh
+surge dist/cad-board cad-board.surge.sh

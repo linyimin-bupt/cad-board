@@ -40,8 +40,8 @@ jobs:
 
       deploy:
         provider: surge
-        project: dist/cad-screen/
-        domain: cad-screen.surge.sh
+        project: dist/cad-board/
+        domain: cad-board.surge.sh
         skip_cleanup: true
         on:
           all_branches: true

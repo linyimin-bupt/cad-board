@@ -6,7 +6,7 @@ import { GoogleChartsModule } from 'angular-google-charts'
 import { FirebaseModule }       from '../firebase'
 import { VersionCheckService }  from '../version-check.service'
 
-import { CadScreenComponent } from './cad-screen.component'
+import { CadScreenComponent } from './cad-board.component'
 
 describe('CadScreenComponent', () => {
   let component: CadScreenComponent

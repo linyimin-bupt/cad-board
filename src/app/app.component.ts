@@ -21,7 +21,7 @@ import {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title   = 'CAD Monitor & Reportor'
+  title   = 'CAD Board'
   version = VERSION
 
   constructor(

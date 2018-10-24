@@ -1,5 +1,5 @@
 /**
- * (cd /home/zixia/git/cad-screen && npm run monitor)
+ * (cd /home/zixia/git/cad-board && npm run monitor)
  */
 import * as shell from 'shelljs'
 import * as firebase from 'firebase'

@@ -14,7 +14,7 @@ const readDir = util.promisify(fs.readdir);
 const writeFile = util.promisify(fs.writeFile);
 const readFile = util.promisify(fs.readFile);
 
-WEB_ROOT_DIR = path.join(__dirname + '/../dist/cad-screen')
+WEB_ROOT_DIR = path.join(__dirname + '/../dist/cad-board')
 
 console.log('\nRunning post-build tasks');
 

@@ -7,7 +7,7 @@ import { FirebaseModule } from './firebase/'
 import { GoogleChartsModule } from 'angular-google-charts'
 
 import { AppComponent } from './app.component'
-import { CadScreenComponent } from './cad-screen/cad-screen.component'
+import { CadScreenComponent } from './cad-board/cad-board.component'
 
 @NgModule({
   declarations: [

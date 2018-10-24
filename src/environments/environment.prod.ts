@@ -2,11 +2,11 @@ export const environment = {
   production: true,
   versionCheckURL: '/version.json',
   firebase: {
-    apiKey           : 'AIzaSyC7rffsqf4BEpJIO8lt6eG1lfk9X59_sK8',
-    authDomain       : 'cad-screen.firebaseapp.com',
-    databaseURL      : 'https://cad-screen.firebaseio.com',
-    projectId        : 'cad-screen',
-    storageBucket    : 'cad-screen.appspot.com',
-    messagingSenderId: '177830811901',
+    apiKey           : 'AIzaSyDX3yBuZFUdTbFTb0P82c1Xb1XxQ__1dy4',
+    authDomain       : 'bupt-cad.firebaseapp.com',
+    databaseURL      : 'https://bupt-cad.firebaseio.com',
+    projectId        : 'bupt-cad',
+    storageBucket    : 'bupt-cad.appspot.com',
+    messagingSenderId: '825918518022',
   }
 }

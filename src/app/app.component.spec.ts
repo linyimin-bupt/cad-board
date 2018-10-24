@@ -5,7 +5,7 @@ import { GoogleChartsModule } from 'angular-google-charts'
 
 import { FirebaseModule } from './firebase'
 import { AppComponent } from './app.component'
-import { CadScreenComponent } from './cad-screen/cad-screen.component'
+import { CadScreenComponent } from './cad-board/cad-board.component'
 
 describe('AppComponent', () => {
 
@@ -31,7 +31,7 @@ describe('AppComponent', () => {
   // }))
 
   // TODO: to be fixed
-  // it(`should have as title 'cad-screen'`, async (() => {
+  // it(`should have as title 'cad-board'`, async (() => {
   //   const fixture = TestBed.createComponent(AppComponent)
   //   const app = fixture.debugElement.componentInstance
   //   expect(app.title).toContain('CAD')

@@ -1,10 +1,10 @@
-# CAD SCREEN
+# CAD BOARD
 
-[![Build Status](https://travis-ci.com/BUPT/cad-screen.svg?branch=master)](https://travis-ci.com/BUPT/cad-screen)
+[![Build Status](https://travis-ci.com/BUPT/cad-board.svg?branch=master)](https://travis-ci.com/BUPT/cad-board)
 
-CAD Monitor & Reportor - <https://cad-screen.surge.sh/>
+CAD Board - <https://cad-board.surge.sh/>
 
-![CAD Screen @ 819](https://bupt.github.io/cad-screen/images/cad-screen-819.jpg)
+![CAD Board @ 819](https://bupt.github.io/cad-board/images/cad-board-819.jpg)
 
 ## SEE ALSO
 
@@ -19,7 +19,7 @@ CAD Monitor & Reportor - <https://cad-screen.surge.sh/>
 1. Angular Developer: TBH
 1. Service Administrator: [@linyimin-bupt](https://github.com/linyimin-bupt) Yimin LIN \<linyimin520812@gmail.com\>
     1. Deploy Server Monitor Script
-    1. Keep CAD-Screen Visible & Available
+    1. Keep CAD-board Visible & Available
 1. Designer: TBH
 1. WebTask Developer: TBH
 
