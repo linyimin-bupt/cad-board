@@ -16,12 +16,21 @@ CAD Board - <https://cad-board.surge.sh/>
 
 1. Architect: [@zixia](https://github.com/zixia) Huan LI
 1. Database Administrator: TBH
+    1. Define Schema
+    1. Firebase Management
 1. Angular Developer: [@KongHuihui-CAD](https://github.com/KongHuihui-CAD) Hui KONG \<15210789943@163.com\>
-1. Service Administrator: [@linyimin-bupt](https://github.com/linyimin-bupt) Min LIN \<linyimin520812@gmail.com\>
+    1. Add Features
+    1. Write Unit Tests
+    1. Fix Bugs
+1. System Administrator: [@linyimin-bupt](https://github.com/linyimin-bupt) Min LIN \<linyimin520812@gmail.com\>
     1. Deploy Server Monitor Script
     1. Keep CAD-board Visible & Available
 1. Designer: TBH
-1. WebTask Developer: TBH
+    1. Naming
+    1. Layout
+    1. Color
+1. Node JS Developer: TBH
+    1. WebTask
 
 **WE ARE HIRING!**
 
