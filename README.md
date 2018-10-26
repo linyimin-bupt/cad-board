@@ -1,5 +1,6 @@
 # CAD BOARD
 
+[![BUPT CAD Project](https://img.shields.io/badge/%20-BUPT_CAD_Project-blue.svg)](https://github.com/bupt/awesome-cad)
 [![Build Status](https://travis-ci.com/BUPT/cad-board.svg?branch=master)](https://travis-ci.com/BUPT/cad-board)
 
 CAD Board - <https://cad-board.surge.sh/>
