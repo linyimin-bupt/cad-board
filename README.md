@@ -26,7 +26,7 @@ CAD Board - <https://cad-board.surge.sh/>
 1. System Administrator: [@linyimin-bupt](https://github.com/linyimin-bupt) Min LIN \<linyimin520812@gmail.com\>
     1. Deploy Server Monitor Script
     1. Keep CAD-board Visible & Available
-1. Designer: TBH
+1. UI Designer: TBH
     1. Naming
     1. Layout
     1. Color
