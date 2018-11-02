@@ -15,6 +15,10 @@ CAD Board - <https://cad-board.surge.sh/>
 
 ## TEAM
 
+WE ARE HIRING!
+
+**Naming yourself will be welcome and please help yourself to send PR to add your name to the follow roles!**
+
 1. Architect: [@zixia](https://github.com/zixia) Huan LI
 1. Database Administrator: TBH
     1. Define Schema
