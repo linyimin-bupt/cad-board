@@ -30,7 +30,7 @@ function updateByCurl() {
   done
   param="${param} --data IP=${IP_ADDRESS}"
   echo $param
-  ping "www.baidu.com" -c 3
+  ping "www.baidu.com" -c 3 > /dev/null
   # If online
   if [ $? -eq 0 ]
   then
@@ -42,7 +42,7 @@ function updateByCurl() {
     # Logout campus net
     curl 10.3.8.211/F.htm > /dev/null
   fi
-  echo result
+  echo $result
 }
 
 getGpu
