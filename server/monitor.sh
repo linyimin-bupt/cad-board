@@ -28,7 +28,7 @@ function updateByCurl() {
   do
     param="${param} --data ${gpuNameList[$i]}=${percentageList[$i]}"
   done
-  param="${param} --data IP=${IP_ADDRESS}"
+  param="${param} --data ${HOST_NAME}_IP=${IP_ADDRESS}"
   echo $param
   ping "www.baidu.com" -c 3 > /dev/null
   # If online
@@ -37,7 +37,7 @@ function updateByCurl() {
     result=$(curl -s -k ${param} ${WEB_TASK_URL})
   else
     # Login campus net
-    curl --slient -d 'DDDDD=2017140433&upass=215035&AMKKey=' '10.3.8.211/a11.htm' > /dev/null
+    curl -d 'DDDDD=2017140433&upass=215035&AMKKey=' '10.3.8.211/a11.htm' > /dev/null
     result=$(curl -s -k ${param} ${WEB_TASK_URL})
     # Logout campus net
     curl 10.3.8.211/F.htm > /dev/null
@@ -47,5 +47,3 @@ function updateByCurl() {
 
 getGpu
 updateByCurl
-
-
