@@ -4,7 +4,7 @@ import {
   ViewChild,
   OnDestroy,
 }                         from '@angular/core'
-import { Subscription } from 'rxjs'
+import { Subscription }   from 'rxjs'
 
 import {
   GoogleChartComponent,
@@ -12,13 +12,13 @@ import {
 
 import {
   GpuService,
-}               from '../gpu.service'
+}                         from '../gpu.service'
 
 interface GoogleChart {
   title       : string,
   type        : string,
   data        : Array<Array<string | number | {}>>,
-  roles       : Array<{type: string, role: string}>,
+  roles       : Array<{ type: string, role: string }>,
   columnNames?: Array<string>,
   options?    : {},
 }
@@ -34,19 +34,19 @@ export class CadScreenComponent implements OnInit, OnDestroy {
 
   changingChart = {
     title: 'Machine Learning Status',
-    type: 'BarChart',
-    data: [
+    type : 'BarChart',
+    data : [
       ['Loading ...', 1],
     ],
     columnNames: ['GPU', '%'],
-    options: {
-      animation: {
+    options    : {
+      animation : {
         duration: 250,
-        easing: 'ease-in-out',
-        startup: true
+        easing  : 'ease-in-out',
+        startup : true
       },
       hAxis: {
-        title: 'GPU Utilization',
+        title   : 'GPU Utilization',
         minValue: 0,
         maxValue: 100,
       },
@@ -57,6 +57,10 @@ export class CadScreenComponent implements OnInit, OnDestroy {
   // chart: GoogleChartComponent
 
   subscription: Subscription
+  newData   = []
+  pos       = 0
+  tableData = []
+  totalData = {}
 
   constructor(
     private gpu: GpuService,
@@ -64,16 +68,30 @@ export class CadScreenComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.subscription = this.gpu.getGpus().subscribe(data => {
-      const newData = []
+      console.log(data)
+      const newData        = []
+            this.totalData = data
+      console.log(this.totalData)
       for (const [key, value] of Object.entries(data)) {
         console.log('changed:', key, value)
         const numberValue = parseInt(value, 10)
-        newData.push([key, numberValue])
+        let   flag        = 0
+        for (let i = 0; i < key.length; i++) {
+          if (key[i] === 'I' && key[i + 1] === 'P') {
+            flag = 1
+            delete (data[key])
+            if (this.tableData.length < 4) {
+              this.tableData.push({ 'key': key, 'value': value })
+            }
+          }
+        }
+        if (flag === 0) {
+          newData.push([key, numberValue])
+        }
       }
-
-      console.log(newData)
-      this.changingChart.data = newData
+      this.newData = newData
     })
+    this.repeat()
   }
 
   ngOnDestroy () {
@@ -82,13 +100,23 @@ export class CadScreenComponent implements OnInit, OnDestroy {
     }
   }
 
-  changeChart() {
-    this.changingChart.data = [
-      ['Copper', Math.random() * 20.0],
-      ['Silver', Math.random() * 20.0],
-      ['Gold', Math.random() * 20.0],
-      ['Platinum', Math.random() * 20.0],
-    ]
+  repeat () {
+    const timer = setInterval(() => { this.changeChart() }, 10000)
+  }
+
+  changeChart () {
+    this.changingChart.data = []
+    for (let i = this.pos; i < this.pos + 7; i++) {
+      if (i >= this.newData.length) {
+        break
+      } else {
+        this.changingChart.data.push(this.newData[i])
+      }
+    }
+    this.pos += 7
+    if (this.pos >= this.newData.length) {
+      this.pos = 0
+    }
   }
 
 }

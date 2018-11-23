@@ -7,6 +7,8 @@ import { FirebaseModule } from './firebase'
 import { AppComponent } from './app.component'
 import { CadScreenComponent } from './cad-board/cad-board.component'
 
+import { ElModule }           from 'element-angular'
+
 describe('AppComponent', () => {
 
   beforeEach(async(() => {
@@ -15,6 +17,7 @@ describe('AppComponent', () => {
         FirebaseModule,
         GoogleChartsModule,
         HttpClientModule,
+        ElModule,
       ],
       declarations: [
         AppComponent,
@@ -37,7 +40,7 @@ describe('AppComponent', () => {
   //   expect(app.title).toContain('CAD')
   // }))
 
-  it('should render title in a h1 tag', async (() => {
+  it('should render title in a h1 tag', (() => {
     const fixture = TestBed.createComponent(AppComponent)
 
     fixture.detectChanges()

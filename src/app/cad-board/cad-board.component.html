@@ -1,10 +1,18 @@
-<google-chart
-  width="800"
-  [title]="changingChart.title"
-  [type]="changingChart.type"
-  [data]="changingChart.data"
-  [columnNames]="changingChart.columnNames"
-  [options]="changingChart.options">
-</google-chart>
+<div class="header">
+  <div class="tableContent">
+    <el-table [model]="tableData" [border]="true" center="all">
+      <el-table-column model-key="key" label="GPU" width="200">
+      </el-table-column>
+      <el-table-column model-key="value" label="IP" width="100">
+      </el-table-column>
+    </el-table>
+  </div>
+  <div class="chartContent">
+    <google-chart width="600" [title]="changingChart.title" [type]="changingChart.type" [data]="changingChart.data"
+      [columnNames]="changingChart.columnNames" [options]="changingChart.options">
+    </google-chart>
+  </div>
+</div>
+
 
 <!-- button (click)="changeChart()">Change Data</button -->

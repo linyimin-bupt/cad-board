@@ -1,0 +1,21 @@
+@import "~element-angular/theme/index.css";
+.header{
+    position: relative;
+}
+.tableContent{
+    width: 300px;
+    position: relative;
+    left: 600px;
+    top: 20px;
+}
+.chartContent{
+    position: relative;
+    top: -170px;
+}
+
+.tableContent{
+    border: 1px solid #ddd;
+    padding: 8px;
+    line-height: 2;
+    border-radius: 5px;
+}

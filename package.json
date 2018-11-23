@@ -29,6 +29,7 @@
     "@types/shelljs": "^0.8.0",
     "angular-google-charts": "0.0.9",
     "core-js": "^2.5.4",
+    "element-angular": "^0.7.6",
     "firebase": "^5.5.4",
     "rxjs": "~6.2.0",
     "shelljs": "^0.8.2",

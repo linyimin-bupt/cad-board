@@ -7,6 +7,7 @@ import { FirebaseModule }       from '../firebase'
 import { VersionCheckService }  from '../version-check.service'
 
 import { CadScreenComponent } from './cad-board.component'
+import { ElModule }           from 'element-angular'
 
 describe('CadScreenComponent', () => {
   let component: CadScreenComponent
@@ -21,6 +22,7 @@ describe('CadScreenComponent', () => {
         FirebaseModule,
         GoogleChartsModule,
         HttpClientModule,
+        ElModule,
       ],
     })
     .compileComponents()
